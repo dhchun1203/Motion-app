@@ -1,7 +1,11 @@
-let imgBtn = document.querySelector<HTMLButtonElement>(".imageBtn")!;
-console.log(imgBtn);
+import { PageComponent } from "./components/page.js";
 
-class PageComponent {
-	content = document.querySelector(".content")!;
-	a = document.createElement("p");
+class App {
+	private readonly page: PageComponent;
+	constructor(appRoot: HTMLElement) {
+		this.page = new PageComponent();
+		this.page.attachTo(appRoot);
+	}
 }
+
+new App(document.querySelector(".document")! as HTMLElement);

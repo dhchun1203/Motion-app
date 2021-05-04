@@ -1,10 +1,9 @@
-"use strict";
-let imgBtn = document.querySelector(".imageBtn");
-console.log(imgBtn);
-class PageComponent {
-    constructor() {
-        this.content = document.querySelector(".content");
-        this.a = document.createElement("p");
+import { PageComponent } from "./components/page.js";
+class App {
+    constructor(appRoot) {
+        this.page = new PageComponent();
+        this.page.attachTo(appRoot);
     }
 }
+new App(document.querySelector(".document"));
 //# sourceMappingURL=app.js.map
