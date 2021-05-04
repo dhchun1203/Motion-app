@@ -1,6 +1,7 @@
 :root {
 	--body-margin: 10px;
 	--border-radius: 8px;
+	--document-bgcolor: rgba(255, 255, 255, 0.2);
 }
 
 html,
@@ -9,7 +10,7 @@ body {
 	height: auto;
 }
 body {
-	background-image: url(../image/cool-background.png);
+	background-image: url(../asset/cool-background.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -21,7 +22,17 @@ body {
 	flex-direction: column;
 	align-items: center;
 }
-.title {
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1000px;
+}
+.banner {
+	text-align: center;
+}
+.banner__title {
 	font-size: 4em;
 	height: 40px;
 	line-height: 40px;
@@ -37,15 +48,17 @@ body {
 	user-select: none; /* Non-prefixed version, currently
   supported by Chrome, Edge, Opera and Firefox */
 }
-nav {
+.control-panel {
 	margin-bottom: 2em;
 	padding: 16px;
-	width: 90%;
-	text-align: center;
+	width: auto;
 	border-radius: var(--border-radius);
 	background-color: rgba(255, 255, 255, 0.2);
+	list-style: none;
+	display: flex;
+	justify-content: center;
 }
-button {
+.create-button {
 	background: linear-gradient(#e66465, #9198e5);
 	color: #fff;
 	border: none;
@@ -54,9 +67,10 @@ button {
 	height: 50px;
 	font-family: "Noto Serif", serif;
 	font-family: "Roboto Condensed", sans-serif;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	padding: 0 2em;
 	margin: 0 0.4em;
+	text-transform: uppercase;
 	cursor: pointer;
 	transition: 200ms ease-in all;
 	outline: none;
@@ -88,27 +102,32 @@ button:hover:after {
 	width: 100%;
 	transition: 400ms ease-in all;
 }
-.items {
+.document {
 	border-radius: var(--border-radius);
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: var(--document-bgcolor);
 	display: flex;
 	flex-direction: column;
 	width: 90%;
+	height: 100%;
 	min-height: 30em;
-	/* overflow: auto; */
+	/* Firefox */
+	scrollbar-width: 6px;
+	scrollbar-color: gray;
+	scrollbar-face-color: lightgray;
 }
-.item {
-	height: 2rem;
-	background-color: rgb(244, 196, 222);
-	border-radius: var(--border-radius);
-	margin: 0.5rem 2rem;
-	min-height: 8rem;
-	padding: 4px;
+.document::--webkit-scrollbar {
+	/* Safari and Chrome */
+	background-color: gray;
+	width: 6px;
+}
+.document::-webkit-scrollbar-thumb {
+	/* Safari and Chrome */
+	background-color: lightgray;
 }
 .footer {
 	border-radius: var(--border-radius);
 	background-color: rgba(3, 3, 3, 0.279);
-	margin: 3em 0;
+	margin: 1em 0;
 	width: 90%;
 	height: auto;
 	text-align: center;
@@ -132,5 +151,5 @@ a:visited {
 
 a:hover,
 a:active {
-	transform: scale(1.2);
+	transform: scale(1.3);
 }
