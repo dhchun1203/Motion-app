@@ -17,7 +17,7 @@ class App {
 
 		const video = new VideoComponent(
 			"healing music",
-			"https://www.youtube.com/embed/ArQvRDWulns"
+			"https://youtu.be/ArQvRDWulns"
 		);
 		video.attachTo(appRoot, "beforeend");
 

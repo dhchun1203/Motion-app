@@ -19,11 +19,25 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
 		const videoIframe = this.element.querySelector(
 			".video__iframe"
 		)! as HTMLIFrameElement;
-		videoIframe.src = url;
+		videoIframe.src = this.convertToEmbeddedURL(url);
 
 		const videoTitle = this.element.querySelector(
 			".video__title"
 		)! as HTMLHeadingElement;
 		videoTitle.textContent = title;
+	}
+
+	// https://youtu.be/sOpp-mQM0RQ
+	// https://www.youtube.com/watch?v=sOpp-mQM0RQ
+	// https://youtu.be/sOpp-mQM0RQ?t=4
+	private convertToEmbeddedURL(url: string): string {
+		const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-]{11}))|(?:youtu.be\/([a-zA-Z0-9-]{11})))/;
+		const match = url.match(regExp);
+		console.log(match);
+		const videoId = match ? match[1] || match[2] : undefined;
+		if (videoId) {
+			return `https://www.youtube.com/embed/${videoId}`;
+		}
+		return url;
 	}
 }
