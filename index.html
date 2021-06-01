@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="./build/main.js"></script>
+		<script type="module" src="./dist/app.js" defer></script>
 		<script
 			src="https://kit.fontawesome.com/8b98a99811.js"
 			crossorigin="anonymous"
@@ -14,45 +14,41 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto+Condensed:wght@300&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./src/css/main.css" />
-		<title>Document</title>
+		<link rel="stylesheet" href="./style/style.css" />
+		<title>Motion</title>
 	</head>
 	<body>
-		<h1 class="title">Motion</h1>
-		<nav>
-			<button class="imageBtn" type="">IMAGE</button>
-			<button class="videoBtn" type="">VIDEO</button>
-			<button class="noteBtn" type="">NOTE</button>
-			<button class="taskBtn" type="">TASK</button>
-		</nav>
-		<section class="items">
-			<div class="item">item</div>
-			<div class="item">item</div>
-			<div class="item">item</div>
-			<div class="item">item</div>
-			<div class="item">item</div>
-			<div class="item">item</div>
-			<div class="item">item</div>
-		</section>
-		<footer class="footer">
-			<p>© Copyright by Dae Hwan Chun. All rights reversed</p>
-			<div class="contact">
-				<h3>Contact :</h3>
-				<a
-					href="mailto:dhchun1203@gmail.com?Subject=Hello%20again"
-					target="_blank"
-				>
-					<i class="fab fa-google"></i>
-				</a>
-				<a href="https://github.com/dhchun1203" target="_blank"
-					><i class="fab fa-github"></i
-				></a>
-				<a
-					href="https://www.facebook.com/profile.php?id=100010406657545"
-					target="_blank"
-					><i class="fab fa-facebook"></i
-				></a>
-			</div>
-		</footer>
+		<div class="content">
+			<header class="banner">
+				<h1 class="banner__title">Motion</h1>
+				<ul class="control-panel">
+					<li><button id="new-iamge" class="create-button">image</button></li>
+					<li><button id="new-video" class="create-button">video</button></li>
+					<li><button id="new-note" class="create-button">note</button></li>
+					<li><button id="new-todo" class="create-button">todo</button></li>
+				</ul>
+			</header>
+			<main class="document"></main>
+			<footer class="footer">
+				<p>© Copyright by Dae Hwan Chun. All rights reversed</p>
+				<div class="contact">
+					<h3>Contact :</h3>
+					<a
+						href="mailto:dhchun1203@gmail.com?Subject=Hello%20again"
+						target="_blank"
+					>
+						<i class="fab fa-google"></i>
+					</a>
+					<a href="https://github.com/dhchun1203" target="_blank"
+						><i class="fab fa-github"></i
+					></a>
+					<a
+						href="https://www.facebook.com/profile.php?id=100010406657545"
+						target="_blank"
+						><i class="fab fa-facebook"></i
+					></a>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>

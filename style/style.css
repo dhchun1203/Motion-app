@@ -75,13 +75,13 @@ body {
 	transition: 200ms ease-in all;
 	outline: none;
 }
-button:hover {
+.create-button:hover {
 	background: linear-gradient(#e66465, #9198e5);
 	transform: scale(1.1);
 	color: white;
 }
-button:before,
-button:after {
+.create-button:before,
+.create-button:after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -91,25 +91,24 @@ button:after {
 	background: white;
 	transition: 200ms ease-in all;
 }
-button:after {
+.create-button:after {
 	right: inherit;
 	top: inherit;
 	left: 0;
 	bottom: 0;
 }
-button:hover:before,
-button:hover:after {
+.create-button:hover:before,
+.create-button:hover:after {
 	width: 100%;
 	transition: 400ms ease-in all;
 }
 .document {
 	border-radius: var(--border-radius);
 	background-color: var(--document-bgcolor);
-	display: flex;
-	flex-direction: column;
 	width: 90%;
 	height: 100%;
 	min-height: 30em;
+	overflow-y: auto;
 	/* Firefox */
 	scrollbar-width: 6px;
 	scrollbar-color: gray;
@@ -123,6 +122,9 @@ button:hover:after {
 .document::-webkit-scrollbar-thumb {
 	/* Safari and Chrome */
 	background-color: lightgray;
+}
+.page-item {
+	list-style: none;
 }
 .footer {
 	border-radius: var(--border-radius);
