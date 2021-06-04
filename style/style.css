@@ -102,6 +102,9 @@ body {
 	width: 100%;
 	transition: 400ms ease-in all;
 }
+dialog {
+	border: 0px;
+}
 .dialog {
 	display: flex;
 	align-items: center;
